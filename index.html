@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Belarus Astronomy Olympiad — belastro.org</title>
+  <meta name="description" content="Official site of the Belarus Astronomy Olympiad (BelAstro)." />
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; }
+    header, main, footer { max-width: 880px; margin: 0 auto; padding: 24px; }
+    header { padding-top: 40px; }
+    h1 { margin: 0 0 8px; font-size: 2rem; }
+    .subtitle { margin: 0; opacity: .8; }
+    nav { margin-top: 18px; display: flex; gap: 14px; flex-wrap: wrap; }
+    nav a { text-decoration: none; border-bottom: 1px solid transparent; }
+    nav a:hover { border-bottom-color: currentColor; }
+    .card { border: 1px solid rgba(127,127,127,.35); border-radius: 12px; padding: 18px; margin: 18px 0; }
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    ul { margin: 10px 0 0 18px; }
+    footer { opacity: .75; font-size: .95rem; padding-bottom: 44px; }
+    .btn { display: inline-block; padding: 10px 14px; border-radius: 10px; border: 1px solid rgba(127,127,127,.45); text-decoration: none; }
+    .btn:hover { filter: brightness(1.05); }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Belarus Astronomy Olympiad</h1>
+    <p class="subtitle">Official information, schedules, and resources — <strong>belastro.org</strong></p>
+
+    <nav aria-label="Primary">
+      <a href="#news">News</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#resources">Resources</a>
+      <a href="#contact">Contact</a>
+      <!-- <a class="btn" href="#registration">Registration</a> -->
+    </nav>
+  </header>
+
+  <main>
+    <section id="news" class="card">
+      <h2>News</h2>
+      <ul>
+        <li>Registration for the upcoming round will open soon.</li>
+        <li>New problem set materials will be published in the Resources section.</li>
+      </ul>
+    </section>
+
+    <section id="schedule" class="card">
+      <h2>Schedule</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Round 1</h3>
+          <p>Date: <em>TBD</em><br />Location: <em>TBD</em></p>
+        </div>
+        <div class="card">
+          <h3>Round 2</h3>
+          <p>Date: <em>TBD</em><br />Location: <em>TBD</em></p>
+        </div>
+        <div class="card">
+          <h3>Final</h3>
+          <p>Date: <em>TBD</em><br />Location: <em>TBD</em></p>
+        </div>
+      </div>
+      <p style="margin-top:12px; opacity:.85;">Exact dates will be announced here as soon as they are confirmed.</p>
+    </section>
+
+    <section id="resources" class="card">
+      <h2>Resources</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Problems</h3>
+          <ul>
+            <li><a href="#">Past problems (PDF)</a></li>
+            <li><a href="#">Practice set</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="#">Official solutions</a></li>
+            <li><a href="#">Grading guidelines</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Reading</h3>
+          <ul>
+            <li><a href="#">Recommended textbooks</a></li>
+            <li><a href="#">Astronomy basics</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="registration" class="card">
+      <h2>Registration</h2>
+      <p>To register, please email the organizers with your name, school, grade, and city.</p>
+      <p><a class="btn" href="mailto:organizers@belastro.org">Email organizers</a></p>
+      <p style="opacity:.8; margin-top:10px;">(Replace this with an online form link when available.)</p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:info@belastro.org">info@belastro.org</a><br />
+        Address: <em>TBD</em>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="y"></span> Belarus Astronomy Olympiad (BelAstro). All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
