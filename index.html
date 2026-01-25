@@ -1,120 +1,700 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Belarus Astronomy Olympiad — belastro.org</title>
-  <meta name="description" content="Official site of the Belarus Astronomy Olympiad (BelAstro)." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belarus Astronomy Olympiad — BelAstro.org</title>
+  <meta name="description" content="Official website of the Belarusian Astronomical Olympiads. Problems, solutions, and resources for all levels.">
   <style>
-    :root { color-scheme: light dark; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; }
-    header, main, footer { max-width: 880px; margin: 0 auto; padding: 24px; }
-    header { padding-top: 40px; }
-    h1 { margin: 0 0 8px; font-size: 2rem; }
-    .subtitle { margin: 0; opacity: .8; }
-    nav { margin-top: 18px; display: flex; gap: 14px; flex-wrap: wrap; }
-    nav a { text-decoration: none; border-bottom: 1px solid transparent; }
-    nav a:hover { border-bottom-color: currentColor; }
-    .card { border: 1px solid rgba(127,127,127,.35); border-radius: 12px; padding: 18px; margin: 18px 0; }
-    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-    ul { margin: 10px 0 0 18px; }
-    footer { opacity: .75; font-size: .95rem; padding-bottom: 44px; }
-    .btn { display: inline-block; padding: 10px 14px; border-radius: 10px; border: 1px solid rgba(127,127,127,.45); text-decoration: none; }
-    .btn:hover { filter: brightness(1.05); }
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --secondary: #7c3aed;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --border: #e2e8f0;
+      --card-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      --hover-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #60a5fa;
+        --primary-light: #93c5fd;
+        --secondary: #a78bfa;
+        --bg: #0f172a;
+        --bg-alt: #1e293b;
+        --text: #f1f5f9;
+        --text-light: #94a3b8;
+        --border: #334155;
+        --card-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        --hover-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      }
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 30px 0;
+      border-bottom: 3px solid var(--primary-light);
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .logo h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .logo p {
+      opacity: 0.9;
+      font-size: 1rem;
+    }
+    
+    .lang-switcher {
+      display: flex;
+      gap: 5px;
+      background: rgba(255,255,255,0.1);
+      padding: 4px;
+      border-radius: 4px;
+    }
+    
+    .lang-btn {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.3);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.5);
+    }
+    
+    .lang-btn.active {
+      background: white;
+      color: var(--primary);
+      border-color: white;
+    }
+    
+    /* Navigation */
+    nav {
+      background: var(--bg-alt);
+      padding: 15px 0;
+      border-bottom: 2px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s, border-color 0.2s;
+      padding: 5px 0;
+      border-bottom: 2px solid transparent;
+    }
+    
+    nav a:hover {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    
+    /* Main Content */
+    main {
+      padding: 40px 0;
+    }
+    
+    section {
+      margin-bottom: 60px;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      margin-top: 30px;
+    }
+    
+    h4 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+    
+    /* Introduction */
+    .intro {
+      background: var(--bg-alt);
+      padding: 30px;
+      border-left: 4px solid var(--primary);
+      margin-bottom: 30px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .intro p {
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    
+    .intro strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    /* Cards Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .card {
+      background: var(--bg-alt);
+      padding: 25px;
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      transition: border-color 0.2s;
+    }
+    
+    .card:hover {
+      border-color: var(--primary);
+    }
+    
+    .card h3 {
+      margin-top: 0;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .card ul {
+      list-style: none;
+      margin-top: 15px;
+    }
+    
+    .card li {
+      margin-bottom: 10px;
+    }
+    
+    .card a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .card a:hover {
+      color: var(--primary);
+    }
+    
+    .card a.btn-secondary {
+      display: inline-block;
+      padding: 8px 18px;
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      border-radius: 2px;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+    }
+    
+    .card a.btn-secondary:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    /* File Lists */
+    .file-list {
+      background: var(--bg-alt);
+      padding: 20px;
+      border-radius: 4px;
+      margin-top: 15px;
+    }
+    
+    .year-section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: var(--bg);
+      border-radius: 4px;
+      border-left: 4px solid var(--primary);
+    }
+    
+    .year-title {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    
+    .file-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin: 5px 0;
+      background: var(--bg-alt);
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    
+    .file-item:hover {
+      background: var(--border);
+    }
+    
+    .file-item a {
+      color: var(--text);
+      text-decoration: none;
+      flex: 1;
+    }
+    
+    .file-icon {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--bg-alt);
+      padding: 30px 0;
+      margin-top: 60px;
+      border-top: 2px solid var(--border);
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      border: 2px solid var(--primary);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    
+    .btn:hover {
+      background: var(--primary-light);
+      border-color: var(--primary-light);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    /* Language Toggle */
+    body:not(.lang-ru) [lang="ru"],
+    body.lang-ru [lang="en"] {
+      display: none !important;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .logo h1 {
+        font-size: 1.6rem;
+      }
+      
+      nav ul {
+        gap: 15px;
+        font-size: 0.95rem;
+      }
+      
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .intro {
+        padding: 20px;
+      }
+      
+      .card {
+        padding: 20px;
+      }
+    }
+    
+    /* Collapsible Sections */
+    details {
+      margin: 15px 0;
+      border: 2px solid var(--border);
+    }
+    
+    summary {
+      cursor: pointer;
+      padding: 15px 20px;
+      background: var(--bg-alt);
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--primary);
+      user-select: none;
+      transition: background 0.2s;
+    }
+    
+    summary:hover {
+      background: var(--border);
+    }
+    
+    details[open] summary {
+      border-bottom: 1px solid var(--border);
+    }
   </style>
 </head>
-
 <body>
   <header>
-    <h1>Belarus Astronomy Olympiad</h1>
-    <p class="subtitle">Official information, schedules, and resources — <strong>belastro.org</strong></p>
-
-    <nav aria-label="Primary">
-      <a href="#news">News</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#resources">Resources</a>
-      <a href="#contact">Contact</a>
-      <!-- <a class="btn" href="#registration">Registration</a> -->
-    </nav>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <h1 lang="en">Belarus Astronomy Olympiad</h1>
+          <h1 lang="ru">Белорусские Астрономические Олимпиады</h1>
+          <p lang="en">Official Website — BelAstro.org</p>
+          <p lang="ru">Официальный сайт — BelAstro.org</p>
+        </div>
+        <div class="lang-switcher">
+          <button class="lang-btn active" onclick="switchLang('en')">English</button>
+          <button class="lang-btn" onclick="switchLang('ru')">Русский</button>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section id="news" class="card">
-      <h2>News</h2>
+  <nav>
+    <div class="container">
       <ul>
-        <li>Registration for the upcoming round will open soon.</li>
-        <li>New problem set materials will be published in the Resources section.</li>
+        <li><a href="index.html" lang="en">Home</a></li>
+        <li><a href="index.html" lang="ru">Главная</a></li>
+        
+        <li><a href="school.html" lang="en">School</a></li>
+        <li><a href="school.html" lang="ru">Школьный</a></li>
+        
+        <li><a href="district.html" lang="en">District</a></li>
+        <li><a href="district.html" lang="ru">Районный</a></li>
+        
+        <li><a href="regional.html" lang="en">Regional</a></li>
+        <li><a href="regional.html" lang="ru">Областной</a></li>
+        
+        <li><a href="republican.html" lang="en">Republican</a></li>
+        <li><a href="republican.html" lang="ru">Республиканский</a></li>
+        
+        <li><a href="books.html" lang="en">Books</a></li>
+        <li><a href="books.html" lang="ru">Книги</a></li>
+        
+        <li><a href="ioaa.html" lang="en">IOAA</a></li>
+        <li><a href="ioaa.html" lang="ru">IOAA</a></li>
+        
+        <li><a href="usaaao.html" lang="en">USAAAO</a></li>
+        <li><a href="usaaao.html" lang="ru">USAAAO</a></li>
+        
+        <li><a href="index.html#contact" lang="en">Contact</a></li>
+        <li><a href="index.html#contact" lang="ru">Контакты</a></li>
       </ul>
-    </section>
+    </div>
+  </nav>
 
-    <section id="schedule" class="card">
-      <h2>Schedule</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Round 1</h3>
-          <p>Date: <em>TBD</em><br />Location: <em>TBD</em></p>
-        </div>
-        <div class="card">
-          <h3>Round 2</h3>
-          <p>Date: <em>TBD</em><br />Location: <em>TBD</em></p>
-        </div>
-        <div class="card">
-          <h3>Final</h3>
-          <p>Date: <em>TBD</em><br />Location: <em>TBD</em></p>
-        </div>
+  <main class="container">
+    <!-- Introduction Section -->
+    <section id="about">
+      <div class="intro active-lang" lang="en">
+        <h2>Welcome to BelAstro</h2>
+        <p>Dear ladies and gentlemen, students of schools, lyceums and gymnasiums, teachers and students, as well as everyone who is interested in astronomy and who practices it professionally!</p>
+        <p>A long-awaited event has taken place in the world of Belarusian astronomy - the official website of the Belarusian astronomical olympiads has started working. Only here will you find detailed official information related to olympiads at all levels, and in addition, many other useful materials and links.</p>
+        <p>In the "Olympiads" section - you can completely free download the conditions and solutions of tasks from previous years, the "Information" indicator will take you to the section with a file archive and links to astronomical resources on the Internet, in the "Photo Gallery" - a detailed photo report on past events of astronomical olympiads, you can communicate with us using the "Guest Book" and "Contacts" sections.</p>
+        <p><strong>Association "Belarusian Astronomical Olympiads" (BelAstro)</strong></p>
       </div>
-      <p style="margin-top:12px; opacity:.85;">Exact dates will be announced here as soon as they are confirmed.</p>
-    </section>
-
-    <section id="resources" class="card">
-      <h2>Resources</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Problems</h3>
-          <ul>
-            <li><a href="#">Past problems (PDF)</a></li>
-            <li><a href="#">Practice set</a></li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Solutions</h3>
-          <ul>
-            <li><a href="#">Official solutions</a></li>
-            <li><a href="#">Grading guidelines</a></li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Reading</h3>
-          <ul>
-            <li><a href="#">Recommended textbooks</a></li>
-            <li><a href="#">Astronomy basics</a></li>
-          </ul>
-        </div>
+      
+      <div class="intro" lang="ru">
+        <h2>Добро пожаловать на BelAstro</h2>
+        <p>Уважаемые дамы и господа, учащиеся школ, лицеев и гимназий, преподаватели и студенты, а также все, кто интересуется астрономией, и кто занимается ею профессионально!</p>
+        <p>Состоялось долгожданное событие в мире белорусской астрономии - начал работать официальный сайт белорусских астрономических олимпиад. Только здесь вы найдете подробную официальную информацию, связанную с олимпиадами всех уровней, и кроме того, много других полезных материалов и ссылок.</p>
+        <p>В разделе "Олимпиады" - можно совершенно бесплатно скачать условия и решения заданий прошлых лет, указатель "Информация" приведет вас в раздел с файловым архивом и ссылками на астрономические ресурсы сети Интернет, в "Фотогалерее" - подробный фотоотчет о прошедших событиях астрономических олимпиад, пообщаться с нами можно с использованием разделов "Гостевая книга" и "Контакты".</p>
+        <p><strong>Ассоциация "Белорусские Астрономические Олимпиады" (БелАстрО)</strong></p>
       </div>
     </section>
 
-    <section id="registration" class="card">
-      <h2>Registration</h2>
-      <p>To register, please email the organizers with your name, school, grade, and city.</p>
-      <p><a class="btn" href="mailto:organizers@belastro.org">Email organizers</a></p>
-      <p style="opacity:.8; margin-top:10px;">(Replace this with an online form link when available.)</p>
-    </section>
-
-    <section id="contact" class="card">
-      <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:info@belastro.org">info@belastro.org</a><br />
-        Address: <em>TBD</em>
+    <!-- Olympiads Section -->
+    <section id="olympiads">
+      <h2 lang="en">Belarusian Olympiads</h2>
+      <h2 lang="ru">Белорусские Олимпиады</h2>
+      
+      <p lang="en" style="margin-bottom: 30px; font-size: 1.1rem;">
+        <strong>Complete archive of all Belarusian Astronomical Olympiad materials (885+ files)</strong><br>
+        Navigate to dedicated pages for each level to access all files.
       </p>
+      <p lang="ru" style="margin-bottom: 30px; font-size: 1.1rem;">
+        <strong>Полный архив всех материалов белорусских астрономических олимпиад (885+ файлов)</strong><br>
+        Перейдите на страницы каждого уровня для доступа ко всем файлам.
+      </p>
+
+      <!-- Complete Archives by Level -->
+      <div class="section-nav" style="margin-bottom: 30px;">
+        <h3 lang="en">📂 Browse Complete Archives by Level:</h3>
+        <h3 lang="ru">📂 Просмотреть полные архивы по уровням:</h3>
+        
+        <div class="grid" style="margin-top: 20px;">
+          <a href="school.html" class="nav-card">
+            <h4 lang="en">🏫 School Level<br><small>20+ files (2008-2022)</small></h4>
+            <h4 lang="ru">🏫 Школьный этап<br><small>20+ файлов (2008-2022)</small></h4>
+          </a>
+          
+          <a href="district.html" class="nav-card">
+            <h4 lang="en">🏛️ District Level<br><small>200+ files (2004-2023)</small></h4>
+            <h4 lang="ru">🏛️ Районный этап<br><small>200+ файлов (2004-2023)</small></h4>
+          </a>
+          
+          <a href="regional.html" class="nav-card">
+            <h4 lang="en">🏆 Regional Level<br><small>100+ files (2004-2023)</small></h4>
+            <h4 lang="ru">🏆 Областной этап<br><small>100+ файлов (2004-2023)</small></h4>
+          </a>
+          
+          <a href="republican.html" class="nav-card">
+            <h4 lang="en">🥇 Republican Finals<br><small>180+ files (2000-2022)</small></h4>
+            <h4 lang="ru">🥇 Республиканский<br><small>180+ файлов (2000-2022)</small></h4>
+          </a>
+          
+          <a href="ioaa.html" class="nav-card">
+            <h4 lang="en">🌍 IOAA Archive<br><small>450+ files (2007-2021)</small></h4>
+            <h4 lang="ru">🌍 Архив IOAA<br><small>450+ файлов (2007-2021)</small></h4>
+          </a>
+          
+          <a href="usaaao.html" class="nav-card">
+            <h4 lang="en">🇺🇸 USAAAO Archive<br><small>33+ files (2014-2022)</small></h4>
+            <h4 lang="ru">🇺🇸 Архив USAAAO<br><small>33+ файла (2014-2022)</small></h4>
+          </a>
+          
+          <a href="republican.html#russian" class="nav-card">
+            <h4 lang="en">🇷🇺 Russian Olympiads<br><small>4 files (2005-2008)</small></h4>
+            <h4 lang="ru">🇷🇺 Российские олимпиады<br><small>4 файла (2005-2008)</small></h4>
+          </a>
+          
+          <a href="books.html" class="nav-card">
+            <h4 lang="en">📚 Books & Resources<br><small>35+ textbooks & formulas</small></h4>
+            <h4 lang="ru">📚 Книги и ресурсы<br><small>35+ учебников и формул</small></h4>
+          </a>
+        </div>
+        
+        <div style="background: var(--bg-alt); padding: 30px; border: 2px solid var(--border); margin-top: 40px; text-align: center;">
+          <h3 lang="en">🎯 Complete Archive: 820+ Educational Files</h3>
+          <h3 lang="ru">🎯 Полный архив: 820+ образовательных файлов</h3>
+          <p lang="en" style="margin-top: 15px; font-size: 1.05rem; opacity: 0.8;">
+            All olympiad problems, solutions, and learning materials from 2000-2023<br>
+            <small style="opacity: 0.7;">Note: Web artifacts and installer files are excluded for security</small>
+          </p>
+          <p lang="ru" style="margin-top: 15px; font-size: 1.05rem; opacity: 0.8;">
+            Все задачи олимпиад, решения и учебные материалы с 2000 по 2023 год<br>
+            <small style="opacity: 0.7;">Примечание: Веб-артефакты и установочные файлы исключены из соображений безопасности</small>
+          </p>
+        </div>
+      </div>
+      
+      <div class="grid">
+        <div class="card">
+          <h3 lang="en">🏫 School Level (20+ files)</h3>
+          <h3 lang="ru">🏫 Школьный этап (20+ файлов)</h3>
+          <p lang="en" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">Entry level (2008-2022)</p>
+          <p lang="ru" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">Начальный уровень (2008-2022)</p>
+          <ul>
+            <li><a href="school.html" class="btn-secondary" lang="en">View all years</a></li>
+            <li><a href="school.html" class="btn-secondary" lang="ru">Все годы</a></li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3 lang="en">🏛️ District Level (200+ files)</h3>
+          <h3 lang="ru">🏛️ Районный этап (200+ файлов)</h3>
+          <p lang="en" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">20 years (2004-2023)</p>
+          <p lang="ru" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">20 лет (2004-2023)</p>
+          <ul>
+            <li><a href="district.html" class="btn-secondary" lang="en">View all years</a></li>
+            <li><a href="district.html" class="btn-secondary" lang="ru">Все годы</a></li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3 lang="en">🏆 Regional Level (100+ files)</h3>
+          <h3 lang="ru">🏆 Областной этап (100+ файлов)</h3>
+          <p lang="en" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">19 years (2004-2023)</p>
+          <p lang="ru" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">19 лет (2004-2023)</p>
+          <ul>
+            <li><a href="regional.html" class="btn-secondary" lang="en">View all years</a></li>
+            <li><a href="regional.html" class="btn-secondary" lang="ru">Все годы</a></li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3 lang="en">🥇 Republican Finals (180+ files)</h3>
+          <h3 lang="ru">🥇 Республиканский (180+ файлов)</h3>
+          <p lang="en" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">23 years (2000-2022)</p>
+          <p lang="ru" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">23 года (2000-2022)</p>
+          <ul>
+            <li><a href="republican.html" class="btn-secondary" lang="en">View all years</a></li>
+            <li><a href="republican.html" class="btn-secondary" lang="ru">Все годы</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Books and Resources Section -->
+    <section id="books">
+      <h2 lang="en">📚 Books & Learning Resources</h2>
+      <h2 lang="ru">📚 Книги и учебные материалы</h2>
+      
+      <div class="grid">
+        <div class="card">
+          <h3 lang="en">Formula Sheets (6 files)</h3>
+          <h3 lang="ru">Справочные формулы (6 файлов)</h3>
+          <p lang="en" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">Essential formulas for all topics</p>
+          <p lang="ru" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">Основные формулы по всем темам</p>
+          <ul>
+            <li><a href="books.html#formulas" class="btn-secondary" lang="en">View all formulas</a></li>
+            <li><a href="books.html#formulas" class="btn-secondary" lang="ru">Все формулы</a></li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3 lang="en">Textbooks (20+ books)</h3>
+          <h3 lang="ru">Учебники (20+ книг)</h3>
+          <p lang="en" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">Comprehensive learning materials</p>
+          <p lang="ru" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">Полные учебные материалы</p>
+          <ul>
+            <li><a href="books.html#books" class="btn-secondary" lang="en">View all textbooks</a></li>
+            <li><a href="books.html#books" class="btn-secondary" lang="ru">Все учебники</a></li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3 lang="en">Problem Collections (10+ books)</h3>
+          <h3 lang="ru">Сборники задач (10+ книг)</h3>
+          <p lang="en" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">Practice problem sets</p>
+          <p lang="ru" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">Наборы задач для практики</p>
+          <ul>
+            <li><a href="books.html#problem-collections" class="btn-secondary" lang="en">View all collections</a></li>
+            <li><a href="books.html#problem-collections" class="btn-secondary" lang="ru">Все сборники</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- International Olympiads Section -->
+    <section id="international">
+      <h2 lang="en">🌍 International Olympiads</h2>
+      <h2 lang="ru">🌍 Международные олимпиады</h2>
+      
+      <div class="grid">
+        <div class="card">
+          <h3>IOAA (450+ files)</h3>
+          <p lang="en">International Olympiad on Astronomy and Astrophysics</p>
+          <p lang="ru">Международная олимпиада по астрономии и астрофизике</p>
+          <p lang="en" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">Complete archive 2007-2021</p>
+          <p lang="ru" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">Полный архив 2007-2021</p>
+          <ul>
+            <li><a href="ioaa.html" class="btn-secondary" lang="en">View all IOAA years</a></li>
+            <li><a href="ioaa.html" class="btn-secondary" lang="ru">Все годы IOAA</a></li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3>USAAAO (33+ files)</h3>
+          <p lang="en">United States Astronomy Olympiad</p>
+          <p lang="ru">Олимпиада США по астрономии</p>
+          <p lang="en" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">Complete archive 2014-2022</p>
+          <p lang="ru" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">Полный архив 2014-2022</p>
+          <ul>
+            <li><a href="usaaao.html" class="btn-secondary" lang="en">View all USAAAO years</a></li>
+            <li><a href="usaaao.html" class="btn-secondary" lang="ru">Все годы USAAAO</a></li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3 lang="en">Russian Olympiads (4 files)</h3>
+          <h3 lang="ru">Российские олимпиады (4 файла)</h3>
+          <p lang="en" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">Remote olympiads 2005-2008</p>
+          <p lang="ru" style="margin-top: 10px; margin-bottom: 15px; opacity: 0.8;">Заочные олимпиады 2005-2008</p>
+          <ul>
+            <li><a href="republican.html#russian" class="btn-secondary" lang="en">View all files</a></li>
+            <li><a href="republican.html#russian" class="btn-secondary" lang="ru">Все файлы</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 lang="en">📧 Contact Us</h2>
+      <h2 lang="ru">📧 Свяжитесь с нами</h2>
+      
+      <div class="intro">
+        <p lang="en">For questions about the olympiad, registration, or to report issues with the website, please contact us:</p>
+        <p lang="ru">По вопросам об олимпиаде, регистрации или для сообщения о проблемах с сайтом, пожалуйста, свяжитесь с нами:</p>
+        
+        <p><strong>Email:</strong> <a href="mailto:info@belastro.org">info@belastro.org</a></p>
+        
+        <p lang="en"><strong>Association "Belarusian Astronomical Olympiads" (BelAstro)</strong></p>
+        <p lang="ru"><strong>Ассоциация "Белорусские Астрономические Олимпиады" (БелАстрО)</strong></p>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© <span id="y"></span> Belarus Astronomy Olympiad (BelAstro). All rights reserved.</p>
+    <div class="container">
+      <p lang="en">© 2004-<span class="year"></span> Belarus Astronomy Olympiad (BelAstro). All materials are provided for educational purposes.</p>
+      <p lang="ru">© 2004-<span class="year"></span> Белорусские Астрономические Олимпиады (БелАстрО). Все материалы предоставлены в образовательных целях.</p>
+    </div>
   </footer>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  <script src="scripts.js"></script>
 </body>
 </html>

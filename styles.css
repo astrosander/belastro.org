@@ -1,0 +1,440 @@
+:root {
+  --primary: #1e3a8a;
+  --primary-light: #3b82f6;
+  --secondary: #7c3aed;
+  --bg: #ffffff;
+  --bg-alt: #f8fafc;
+  --text: #1e293b;
+  --text-light: #64748b;
+  --border: #e2e8f0;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  --hover-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #60a5fa;
+    --primary-light: #93c5fd;
+    --secondary: #a78bfa;
+    --bg: #0f172a;
+    --bg-alt: #1e293b;
+    --text: #f1f5f9;
+    --text-light: #94a3b8;
+    --border: #334155;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    --hover-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  padding: 30px 0;
+  border-bottom: 3px solid var(--primary-light);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.logo p {
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 5px;
+  background: rgba(255,255,255,0.1);
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.lang-btn:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.5);
+}
+
+.lang-btn.active {
+  background: white;
+  color: var(--primary);
+  border-color: white;
+}
+
+nav {
+  background: var(--bg-alt);
+  padding: 15px 0;
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s, border-color 0.2s;
+  padding: 5px 0;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+main {
+  padding: 40px 0;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.intro {
+  background: var(--bg-alt);
+  padding: 30px;
+  border-left: 4px solid var(--primary);
+  margin-bottom: 30px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.intro p {
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.intro strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: var(--bg-alt);
+  padding: 25px;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.card ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.card li {
+  margin-bottom: 10px;
+}
+
+.card a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.card a:hover {
+  color: var(--primary);
+}
+
+.card a.btn-secondary,
+.btn-secondary {
+  display: inline-block;
+  padding: 8px 18px;
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 2px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.card a.btn-secondary:hover,
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.year-details {
+  margin: 15px 0;
+  border: 2px solid var(--border);
+  overflow: hidden;
+}
+
+.year-details summary {
+  cursor: pointer;
+  padding: 15px 20px;
+  background: var(--bg-alt);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--primary);
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.year-details summary:hover {
+  background: var(--border);
+}
+
+.year-details[open] summary {
+  border-bottom: 1px solid var(--border);
+}
+
+.file-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.file-grid a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  background: var(--bg-alt);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.2s, border-color 0.2s;
+  border: 1px solid var(--border);
+}
+
+.file-grid a:hover {
+  background: var(--border);
+  border-color: var(--primary);
+}
+
+.file-grid a::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* PDF Files */
+.file-grid a[href$=".pdf"]::before,
+.file-grid a[href$=".PDF"]::before {
+  background-image: url('img/PDF_not_active.svg');
+  transition: background-image 0.2s;
+}
+
+.file-grid a[href$=".pdf"]:hover::before,
+.file-grid a[href$=".PDF"]:hover::before {
+  background-image: url('img/PDF_active.svg');
+}
+
+/* Word Files */
+.file-grid a[href$=".doc"]::before,
+.file-grid a[href$=".docx"]::before,
+.file-grid a[href$=".DOC"]::before,
+.file-grid a[href$=".DOCX"]::before {
+  background-image: url('img/word_inactive.svg');
+  transition: background-image 0.2s;
+}
+
+.file-grid a[href$=".doc"]:hover::before,
+.file-grid a[href$=".docx"]:hover::before,
+.file-grid a[href$=".DOC"]:hover::before,
+.file-grid a[href$=".DOCX"]:hover::before {
+  background-image: url('img/word_active.svg');
+}
+
+/* Other file types keep PDF icon as fallback */
+.file-grid a[href$=".jpg"]::before,
+.file-grid a[href$=".JPG"]::before,
+.file-grid a[href$=".png"]::before,
+.file-grid a[href$=".PNG"]::before,
+.file-grid a[href$=".rtf"]::before,
+.file-grid a[href$=".txt"]::before,
+.file-grid a[href$=".xlsx"]::before,
+.file-grid a[href$=".ppt"]::before,
+.file-grid a[href$=".ppsx"]::before,
+.file-grid a[href$=".odt"]::before,
+.file-grid a[href$=".nb"]::before,
+.file-grid a[href$=".djvu"]::before {
+  background-image: url('img/PDF_not_active.svg');
+  transition: background-image 0.2s;
+}
+
+.file-grid a[href$=".jpg"]:hover::before,
+.file-grid a[href$=".JPG"]:hover::before,
+.file-grid a[href$=".png"]:hover::before,
+.file-grid a[href$=".PNG"]:hover::before,
+.file-grid a[href$=".rtf"]:hover::before,
+.file-grid a[href$=".txt"]:hover::before,
+.file-grid a[href$=".xlsx"]:hover::before,
+.file-grid a[href$=".ppt"]:hover::before,
+.file-grid a[href$=".ppsx"]:hover::before,
+.file-grid a[href$=".odt"]:hover::before,
+.file-grid a[href$=".nb"]:hover::before,
+.file-grid a[href$=".djvu"]:hover::before {
+  background-image: url('img/PDF_active.svg');
+}
+
+.nav-card {
+  background: var(--bg-alt);
+  padding: 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--text);
+  border: 2px solid var(--border);
+  transition: border-color 0.2s;
+  text-align: center;
+}
+
+.nav-card:hover {
+  border-color: var(--primary);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 2px solid var(--primary);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btn:hover {
+  background: var(--primary-light);
+  border-color: var(--primary-light);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.nav-card h4 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 1.3rem;
+}
+
+.nav-card small {
+  opacity: 0.7;
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+footer {
+  background: var(--bg-alt);
+  padding: 30px 0;
+  margin-top: 60px;
+  border-top: 2px solid var(--border);
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+body:not(.lang-ru) [lang="ru"],
+body.lang-ru [lang="en"] {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .logo h1 {
+    font-size: 1.8rem;
+  }
+  
+  nav ul {
+    gap: 15px;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .file-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

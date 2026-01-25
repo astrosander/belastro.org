@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Livello_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 3539103.5 3062500"
+   enable-background="new 0 0 1881.25 1750"
+   xml:space="preserve"
+   width="3539103.5"
+   height="3062500"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:ns="http://ns.adobe.com/SaveForWeb/1.0/"><defs
+   id="defs11" />
+<metadata
+   id="metadata1">
+	<ns:sfw>
+		<ns:slices />
+		<ns:sliceSourceBounds
+   bottomLeftOrigin="true"
+   height="1750"
+   width="1881.25"
+   x="-938.5"
+   y="-851" />
+	</ns:sfw>
+</metadata>
+<path
+   fill="#41A5EE"
+   d="M 1801.056,0 H 517.694 C 473.404,0 437.5,35.904 437.5,80.194 c 0,0 0,0 0,0 V 437.5 l 743.75,218.75 700,-218.75 V 80.194 C 1881.25,35.904 1845.346,0 1801.056,0 Z"
+   id="path1"
+   style="fill:#959595;fill-opacity:1" />
+<path
+   fill="#2B7CD3"
+   d="M 1881.25,437.5 H 437.5 V 875 l 743.75,131.25 700,-131.25 z"
+   id="path2"
+   style="fill:#717171;fill-opacity:1" />
+<path
+   fill="#185ABD"
+   d="m 437.5,875 v 437.5 l 700,87.5 743.75,-87.5 V 875 Z"
+   id="path3"
+   style="fill:#535353;fill-opacity:1" />
+<path
+   fill="#103F91"
+   d="m 517.694,1750 h 1283.363 c 44.29,0 80.194,-35.904 80.194,-80.194 v 0 V 1312.5 H 437.5 v 357.306 c 0,44.29 35.904,80.194 80.194,80.194 z"
+   id="path4"
+   style="fill:#3b3b3b;fill-opacity:1" />
+<path
+   opacity="0.1"
+   enable-background="new    "
+   d="M 969.806,350 H 437.5 v 1093.75 h 532.306 c 44.23,-0.144 80.05,-35.964 80.194,-80.194 V 430.194 c -0.144,-44.23 -35.964,-80.05 -80.194,-80.194 z"
+   id="path5" />
+<path
+   opacity="0.2"
+   enable-background="new    "
+   d="M 926.056,393.75 H 437.5 V 1487.5 h 488.556 c 44.23,-0.144 80.05,-35.964 80.194,-80.194 V 473.944 c -0.144,-44.23 -35.964,-80.05 -80.194,-80.194 z"
+   id="path6" />
+<path
+   opacity="0.2"
+   enable-background="new    "
+   d="M 926.056,393.75 H 437.5 V 1400 h 488.556 c 44.23,-0.144 80.05,-35.964 80.194,-80.194 V 473.944 c -0.144,-44.23 -35.964,-80.05 -80.194,-80.194 z"
+   id="path7" />
+<path
+   opacity="0.2"
+   enable-background="new    "
+   d="M 882.306,393.75 H 437.5 V 1400 h 444.806 c 44.23,-0.144 80.05,-35.964 80.194,-80.194 V 473.944 c -0.144,-44.23 -35.964,-80.05 -80.194,-80.194 z"
+   id="path8" />
+<linearGradient
+   id="SVGID_1_"
+   gradientUnits="userSpaceOnUse"
+   x1="167.2057"
+   y1="1420.9117"
+   x2="795.29431"
+   y2="333.08829"
+   gradientTransform="matrix(1,0,0,-1,0,1752)">
+	<stop
+   offset="0"
+   style="stop-color:#606060;stop-opacity:1;"
+   id="stop8" />
+	<stop
+   offset="0.5"
+   style="stop-color:#565656;stop-opacity:1;"
+   id="stop9" />
+	<stop
+   offset="1"
+   style="stop-color:#424242;stop-opacity:1;"
+   id="stop10" />
+</linearGradient>
+<path
+   fill="url(#SVGID_1_)"
+   d="m 80.194,393.75 h 802.112 c 44.29,0 80.194,35.904 80.194,80.194 v 802.113 c 0,44.29 -35.904,80.194 -80.194,80.194 H 80.194 C 35.904,1356.251 0,1320.347 0,1276.057 V 473.944 C 0,429.654 35.904,393.75 80.194,393.75 Z"
+   id="path10"
+   style="fill:url(#SVGID_1_)" />
+<path
+   fill="#ffffff"
+   d="m 329.088,1008.788 c 1.575,12.381 2.625,23.144 3.106,32.375 h 1.837 c 0.7,-8.75 2.158,-19.294 4.375,-31.631 2.217,-12.338 4.215,-22.765 5.994,-31.281 l 84.35,-363.913 h 109.069 l 87.5,358.444 c 5.084,22.288 8.723,44.881 10.894,67.637 h 1.444 c 1.631,-22.047 4.671,-43.966 9.1,-65.625 l 69.781,-360.631 h 99.269 l -122.588,521.5 H 577.238 L 494.113,790.3 c -2.406,-9.931 -5.162,-22.925 -8.181,-38.894 -3.019,-15.969 -4.9,-27.65 -5.644,-35 h -1.444 c -0.962,8.487 -2.844,21.088 -5.644,37.8 -2.8,16.713 -5.046,29.079 -6.738,37.1 l -78.138,344.269 H 270.374 L 147.131,614.337 h 101.062 l 75.994,364.656 c 1.707,7.482 3.326,17.457 4.901,29.795 z"
+   id="path11" />
+</svg>
