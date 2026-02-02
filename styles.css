@@ -1,35 +1,35 @@
 :root {
-  /* Brand Violet - darker for better readability on white */
-  --primary: #5B21B6;
-  --primary-hover: #4C1D95;
-  --primary-tint-soft: #FAF9FF;
-  --primary-tint-strong: #F3F0FF;
+  /* Brand Violet - much darker for better readability on white */
+  --primary: #4C1D95;
+  --primary-hover: #3B1780;
+  --primary-tint-soft: #FCFBFF;
+  --primary-tint-strong: #F8F6FF;
   
-  /* Support Indigo - darker for better readability */
-  --support: #3730A3;
-  --support-tint: #EEF2FF;
+  /* Support Indigo - much darker for better readability */
+  --support: #312E81;
+  --support-tint: #F5F7FF;
   
-  /* Official accent (amber) - less bright */
-  --accent: #92400E;
-  --accent-light: #FFFBEB;
+  /* Official accent (amber) - darker, less bright */
+  --accent: #78350F;
+  --accent-light: #FFFDF5;
   
   /* Derived colors */
-  --primary-light: #4C1D95;
-  --primary-accent: #3730A3;
-  --secondary: #3730A3;
+  --primary-light: #3B1780;
+  --primary-accent: #312E81;
+  --secondary: #312E81;
   --bg: #ffffff;
-  --bg-alt: #FAF9FF;
+  --bg-alt: #FCFBFF;
   --bg-elevated: #ffffff;
-  --text: #0f172a;
-  --text-light: #334155;
-  --text-muted: #475569;
-  --border: #F3F0FF;
-  --border-strong: #E9E5FF;
-  --card-shadow: 0 1px 3px rgba(91, 33, 182, 0.06);
-  --card-shadow-hover: 0 4px 12px rgba(91, 33, 182, 0.08);
-  --hover-shadow: 0 2px 8px rgba(91, 33, 182, 0.1);
-  --gold: #92400E;
-  --gold-light: #FFFBEB;
+  --text: #0a0e1a;
+  --text-light: #1e293b;
+  --text-muted: #334155;
+  --border: #F8F6FF;
+  --border-strong: #F0EDFF;
+  --card-shadow: 0 1px 2px rgba(76, 29, 149, 0.04);
+  --card-shadow-hover: 0 3px 8px rgba(76, 29, 149, 0.06);
+  --hover-shadow: 0 2px 6px rgba(76, 29, 149, 0.08);
+  --gold: #78350F;
+  --gold-light: #FFFDF5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -78,7 +78,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 .container {
@@ -92,7 +93,7 @@ header {
   color: white;
   padding: 25px 0;
   border-bottom: 4px solid var(--gold);
-  box-shadow: 0 2px 8px rgba(91, 33, 182, 0.12);
+  box-shadow: 0 2px 6px rgba(76, 29, 149, 0.1);
   position: relative;
 }
 
@@ -178,7 +179,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 1px 4px rgba(91, 33, 182, 0.06);
+  box-shadow: 0 1px 3px rgba(76, 29, 149, 0.04);
   backdrop-filter: blur(10px);
 }
 
@@ -247,7 +248,7 @@ h4 {
   padding: 25px;
   border-left: 5px solid var(--primary);
   margin-bottom: 25px;
-  box-shadow: 0 2px 6px rgba(91, 33, 182, 0.06);
+  box-shadow: 0 1px 4px rgba(76, 29, 149, 0.04);
   border-top: 1px solid var(--border);
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -325,10 +326,12 @@ h4 {
   color: var(--text);
   text-decoration: none;
   transition: color 0.2s;
+  font-weight: 500;
 }
 
 .card a:hover {
   color: var(--primary);
+  text-decoration: underline;
 }
 
 .card a.btn-secondary,
@@ -350,7 +353,7 @@ h4 {
 .btn-secondary:hover {
   background: var(--primary);
   color: white;
-  box-shadow: 0 2px 6px rgba(91, 33, 182, 0.15);
+  box-shadow: 0 2px 4px rgba(76, 29, 149, 0.12);
 }
 
 .year-details {
@@ -394,13 +397,15 @@ h4 {
   border-radius: 3px;
   text-decoration: none;
   color: var(--text);
-  transition: background 0.2s, border-color 0.2s;
+  font-weight: 500;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
   border: 1px solid var(--border);
 }
 
 .file-grid a:hover {
-  background: var(--primary-tint-soft);
+  background: var(--primary-tint-strong);
   border-color: var(--primary-hover);
+  color: var(--primary);
 }
 
 .file-grid a::before {
@@ -562,7 +567,7 @@ footer {
   text-align: center;
   color: white;
   font-size: 0.95rem;
-  box-shadow: 0 -2px 8px rgba(91, 33, 182, 0.08);
+  box-shadow: 0 -2px 6px rgba(76, 29, 149, 0.06);
 }
 
 footer p {
