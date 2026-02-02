@@ -133,3 +133,18 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// Google tag (gtag.js)
+(function() {
+  // Initialize dataLayer
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8BMTB5BGH5');
+  
+  // Load Google Analytics script asynchronously
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-8BMTB5BGH5';
+  document.head.appendChild(script);
+})();
+
