@@ -91,7 +91,7 @@ body {
 header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--support) 100%);
   color: white;
-  padding: 25px 0;
+  padding: 15px 0;
   border-bottom: 4px solid var(--gold);
   box-shadow: 0 2px 6px rgba(76, 29, 149, 0.1);
   position: relative;
@@ -110,16 +110,16 @@ header::after {
 .header-content {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 10px;
 }
 
 .header-right-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 10px;
+  gap: 6px;
 }
 
 .logo h1 {
@@ -150,9 +150,9 @@ header::after {
 
 .lang-switcher {
   display: flex;
-  gap: 5px;
+  gap: 4px;
   background: rgba(255,255,255,0.1);
-  padding: 4px;
+  padding: 3px;
   border-radius: 4px;
 }
 
@@ -160,10 +160,10 @@ header::after {
   background: transparent;
   border: 2px solid rgba(255,255,255,0.3);
   color: white;
-  padding: 8px 16px;
+  padding: 6px 12px;
   border-radius: 2px;
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   transition: background 0.2s, border-color 0.2s;
 }
 
@@ -618,17 +618,17 @@ body.lang-ru [lang="en"] {
   width: auto;
   max-width: 280px;
   margin: 0;
-  padding: 8px 12px;
+  padding: 6px 10px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
   position: relative;
   z-index: 2;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -646,7 +646,7 @@ body.lang-ru [lang="en"] {
   color: white;
   transition: all 0.3s ease;
   width: 100%;
-  gap: 6px;
+  gap: 4px;
 }
 
 .belso-section a.belso-link:hover {
