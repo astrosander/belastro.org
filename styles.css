@@ -1,39 +1,70 @@
 :root {
-  --primary: #0f172a;
-  --primary-light: #1e3a8a;
-  --primary-accent: #1e40af;
-  --secondary: #7c3aed;
+  /* Brand Violet - darker for better readability on white */
+  --primary: #5B21B6;
+  --primary-hover: #4C1D95;
+  --primary-tint-soft: #FAF9FF;
+  --primary-tint-strong: #F3F0FF;
+  
+  /* Support Indigo - darker for better readability */
+  --support: #3730A3;
+  --support-tint: #EEF2FF;
+  
+  /* Official accent (amber) - less bright */
+  --accent: #92400E;
+  --accent-light: #FFFBEB;
+  
+  /* Derived colors */
+  --primary-light: #4C1D95;
+  --primary-accent: #3730A3;
+  --secondary: #3730A3;
   --bg: #ffffff;
-  --bg-alt: #f8fafc;
+  --bg-alt: #FAF9FF;
   --bg-elevated: #ffffff;
   --text: #0f172a;
-  --text-light: #475569;
-  --text-muted: #64748b;
-  --border: #cbd5e1;
-  --border-strong: #94a3b8;
-  --card-shadow: 0 1px 3px rgba(0,0,0,0.08);
-  --card-shadow-hover: 0 8px 24px rgba(0,0,0,0.12);
-  --hover-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  --gold: #d4af37;
-  --gold-light: #f4e4bc;
+  --text-light: #334155;
+  --text-muted: #475569;
+  --border: #F3F0FF;
+  --border-strong: #E9E5FF;
+  --card-shadow: 0 1px 3px rgba(91, 33, 182, 0.06);
+  --card-shadow-hover: 0 4px 12px rgba(91, 33, 182, 0.08);
+  --hover-shadow: 0 2px 8px rgba(91, 33, 182, 0.1);
+  --gold: #92400E;
+  --gold-light: #FFFBEB;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary: #60a5fa;
-    --primary-light: #93c5fd;
-    --secondary: #a78bfa;
+    /* Brand Violet - adjusted for dark mode */
+    --primary: #8B5CF6;
+    --primary-hover: #7C3AED;
+    --primary-tint-soft: #1e1b3a;
+    --primary-tint-strong: #2d1f4a;
+    
+    /* Support Indigo - adjusted for dark mode */
+    --support: #6366F1;
+    --support-tint: #1e1f3a;
+    
+    /* Official accent (amber) */
+    --accent: #F59E0B;
+    --accent-light: #78350F;
+    
+    /* Derived colors */
+    --primary-light: #7C3AED;
+    --primary-accent: #6366F1;
+    --secondary: #6366F1;
     --bg: #0f172a;
-    --bg-alt: #1e293b;
+    --bg-alt: #1e1b3a;
     --bg-elevated: #1e293b;
     --text: #f1f5f9;
     --text-light: #94a3b8;
     --text-muted: #64748b;
-    --border: #334155;
-    --border-strong: #475569;
-    --card-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    --card-shadow-hover: 0 8px 24px rgba(0,0,0,0.5);
-    --hover-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    --border: #2d1f4a;
+    --border-strong: #3d2f5a;
+    --card-shadow: 0 1px 3px rgba(109, 40, 217, 0.3);
+    --card-shadow-hover: 0 8px 24px rgba(109, 40, 217, 0.5);
+    --hover-shadow: 0 4px 12px rgba(109, 40, 217, 0.5);
+    --gold: #F59E0B;
+    --gold-light: #78350F;
   }
 }
 
@@ -57,11 +88,11 @@ body {
 }
 
 header {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-accent) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--support) 100%);
   color: white;
   padding: 25px 0;
   border-bottom: 4px solid var(--gold);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 8px rgba(91, 33, 182, 0.12);
   position: relative;
 }
 
@@ -137,6 +168,7 @@ header::after {
   background: white;
   color: var(--primary);
   border-color: white;
+  font-weight: 600;
 }
 
 nav {
@@ -146,7 +178,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 1px 4px rgba(91, 33, 182, 0.06);
   backdrop-filter: blur(10px);
 }
 
@@ -170,7 +202,7 @@ nav a {
 
 nav a:hover {
   color: var(--primary);
-  border-bottom-color: var(--primary);
+  border-bottom-color: var(--primary-hover);
 }
 
 main {
@@ -211,11 +243,11 @@ h4 {
 }
 
 .intro {
-  background: linear-gradient(to right, var(--bg-elevated) 0%, var(--bg-alt) 100%);
+  background: linear-gradient(to right, var(--bg-elevated) 0%, var(--primary-tint-soft) 100%);
   padding: 25px;
   border-left: 5px solid var(--primary);
   margin-bottom: 25px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(91, 33, 182, 0.06);
   border-top: 1px solid var(--border);
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -318,7 +350,7 @@ h4 {
 .btn-secondary:hover {
   background: var(--primary);
   color: white;
-  box-shadow: 0 4px 8px rgba(15, 23, 42, 0.2);
+  box-shadow: 0 2px 6px rgba(91, 33, 182, 0.15);
 }
 
 .year-details {
@@ -330,7 +362,7 @@ h4 {
 .year-details summary {
   cursor: pointer;
   padding: 12px 18px;
-  background: var(--bg-alt);
+  background: var(--primary-tint-soft);
   font-weight: 600;
   font-size: 1.05rem;
   color: var(--primary);
@@ -339,7 +371,7 @@ h4 {
 }
 
 .year-details summary:hover {
-  background: var(--border);
+  background: var(--primary-tint-soft);
 }
 
 .year-details[open] summary {
@@ -358,7 +390,7 @@ h4 {
   align-items: center;
   gap: 10px;
   padding: 10px 12px;
-  background: var(--bg-alt);
+  background: var(--primary-tint-soft);
   border-radius: 3px;
   text-decoration: none;
   color: var(--text);
@@ -367,8 +399,8 @@ h4 {
 }
 
 .file-grid a:hover {
-  background: var(--border);
-  border-color: var(--primary);
+  background: var(--primary-tint-soft);
+  border-color: var(--primary-hover);
 }
 
 .file-grid a::before {
@@ -507,8 +539,8 @@ h4 {
 }
 
 .btn:hover {
-  background: var(--primary-light);
-  border-color: var(--primary-light);
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
 }
 
 .btn-secondary {
@@ -523,14 +555,14 @@ h4 {
 }
 
 footer {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-accent) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--support) 100%);
   padding: 30px 0;
   margin-top: 50px;
   border-top: 4px solid var(--gold);
   text-align: center;
   color: white;
   font-size: 0.95rem;
-  box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 -2px 8px rgba(91, 33, 182, 0.08);
 }
 
 footer p {
@@ -548,7 +580,7 @@ details {
 summary {
   cursor: pointer;
   padding: 12px 18px;
-  background: var(--bg-alt);
+  background: var(--primary-tint-soft);
   font-weight: 600;
   font-size: 1.05rem;
   color: var(--primary);
@@ -557,7 +589,7 @@ summary {
 }
 
 summary:hover {
-  background: var(--border);
+  background: var(--primary-tint-soft);
 }
 
 details[open] summary {
